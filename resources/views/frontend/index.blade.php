@@ -15,7 +15,7 @@
 <header>
 
     <div class="logo">
-        <p>LOCATION TRACKING SYSTEM FOR DENGUE INFECTED AREA</p>
+        <p>Interlista Disaster Management System</p>
     </div>
 
     <nav id="nav-wrap">
@@ -69,17 +69,17 @@
         <div class="twelve columns">
 
             <div class="hero-text">
-                <h1 class="responsive-headline">LOCATION TRACKING SYSTEM FOR DENGUE INFECTED AREA</h1>
+                <h1 class="responsive-headline">Interlista Network </h1>
                 {{--<img src={{ URL::asset('img/mos.jpg') }} class="logoimage img-responsive"  alt="" width="300px" />--}}
-                <h3 class="registerbtn">Register As</h3>
+                <h3 class="registerbtn">Disaster Management System - Uva Province</h3>
             </div>
 
             <div class="buttons">
                 <div class="col-md-3 col-md-offset-2">
-                    <a class="button " href="#" data-toggle="modal" data-target="#mohregistermodel" >Admin Level</a>
+                    <a class="button " href="#" data-toggle="modal" data-target="#mohregistermodel" >Register Today</a>
                 </div>
                 <div class="col-md-3 col-md-offset-2">
-                    <a class="button learn-more smoothscroll" href="#features" data-toggle="modal" data-target="#phiregistermodel">PHI Level</a>
+                    <a class="button learn-more smoothscroll" href="#features" data-toggle="modal" data-target="#phiregistermodel">Learn More...</a>
                 </div>
 
             </div>
