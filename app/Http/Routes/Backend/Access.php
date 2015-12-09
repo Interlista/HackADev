@@ -25,6 +25,9 @@ $router->group([
 		get('analytics' , 'UserController@mohAnalytics');
 		get('patientDetail','UserController@mohPatientDetailsView');
 
+		//Add Book Entry
+		get('new-contact','UserController@newcontact');
+
 		//common to PHI & MOH
 		get('report','UserController@mohreport')->name('admin.access.users.report');
 		get('report/editData/{id}','UserController@mohreportEditData')->name('admin.access.editdata');

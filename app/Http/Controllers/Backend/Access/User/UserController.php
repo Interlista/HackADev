@@ -69,6 +69,11 @@ class UserController extends Controller {
 		return view('backend.forms.phidata');
 	}
 
+	public function newcontact()
+	{
+		return view('backend.forms.register_book_entry');
+	}
+
 //	public function PhiView()
 //	{
 //		return view ('backend.forms.phidataList');
