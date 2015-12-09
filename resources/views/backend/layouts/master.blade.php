@@ -38,7 +38,7 @@
 
 
     </head>
-    <body class="skin-red">
+    <body class="skin-blue">
         <div class="wrapper">
           @include('backend.includes.header')
           @include('backend.includes.sidebar')

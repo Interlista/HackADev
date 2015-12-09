@@ -43,78 +43,36 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0VNngrDJcJB5fXjoU40-hspXMamVKb8k"></script>
 
     <script>
-        var mapLocationMarkers = [];
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 5,
+                center: {lat: 6.9847222 ,lng: 81.0563889},
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+
+            // Define the LatLng coordinates for the polygon's path.
+            var triangleCoords = [
+                {lat: 25.774, lng: -80.190},
+                {lat: 18.466, lng: -66.118},
+                {lat: 32.321, lng: -64.757},
+                {lat: 25.774, lng: -80.190}
+            ];
+
+            // Construct the polygon.
+            var bermudaTriangle = new google.maps.Polygon({
+                paths: triangleCoords,
+                strokeColor: '#FF0000',
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: '#FF0000',
+                fillOpacity: 0.35
+            });
+            bermudaTriangle.setMap(map);
+        }
 
     </script>
     <script>
-        var geocoder;
-        var map;
-        function initialize() {
-            geocoder = new google.maps.Geocoder();
-            var latlng = new google.maps.LatLng(-34.397, 150.644);
-            var mapOptions = {
-                zoom: 8,
-                center: latlng
-            }
-            map = new google.maps.Map(document.getElementById("map"), mapOptions);
-          getlocationDetails();
-        }
-        function getlocationDetails() {
-
-            var locationtrack = function () {
-               var mapLocationMarkers = [];
-                $.ajax({
-                    'async': false,
-                    'type': "GET",
-                    'global': false,
-                    'dataType': 'json',
-                    url: 'mapLocation',
-                    'success': function (data) {
-
-                        for (index in data) {
-                            // console.log(data);
-                            mapLocationMarkers.push(data[index].village_name_text);
-
-                        }
-
-                    }
-                });
-                markLocations(mapLocationMarkers);
-                return mapLocationMarkers;
-            }();
-
-        }
-
-        function markLocations(locationdata){
-
-            var locations = locationdata;
-
-            var nooflocations = locations.length;
-            for(var i=0;i<nooflocations;i++){
-                codeAddress(locations[i]);
-            }
-        }
-        function codeAddress(address) {
-
-            geocoder.geocode( { 'address': address}, function(results, status) {
-                if (status == google.maps.GeocoderStatus.OK) {
-
-                    map.setCenter(results[0].geometry.location);
-                    var marker = new google.maps.Marker({
-                        map: map,
-                        position: results[0].geometry.location
-                    });
-
-                } else {
-                    alert("Geocode was not successful for the following reason: " + status);
-                }
-            });
-        }
-
-
-
-
-        google.maps.event.addDomListener(window, 'load', initialize);
+//
     </script>
 
 @endsection
@@ -129,3 +87,74 @@
 {{--var map = new google.maps.Map(mapCanvas, mapOptions)--}}
 {{--}--}}
 {{--google.maps.event.addDomListener(window, 'load', initialize);--}}
+
+
+{{--var geocoder;--}}
+{{--//var mapLocationMarkers = [];--}}
+{{--//        var map;--}}
+{{--//        function initialize() {--}}
+{{--//            geocoder = new google.maps.Geocoder();--}}
+{{--//            var latlng = new google.maps.LatLng(6.9847222, 81.0563889);--}}
+{{--//            var mapOptions = {--}}
+{{--//                zoom: 8,--}}
+{{--//                center: latlng--}}
+{{--//            }--}}
+{{--//            map = new google.maps.Map(document.getElementById("map"), mapOptions);--}}
+{{--//          getlocationDetails();--}}
+{{--//        }--}}
+{{--//        function getlocationDetails() {--}}
+{{--//--}}
+{{--//            var locationtrack = function () {--}}
+{{--//               var mapLocationMarkers = [];--}}
+{{--//                $.ajax({--}}
+{{--//                    'async': false,--}}
+{{--//                    'type': "GET",--}}
+{{--//                    'global': false,--}}
+{{--//                    'dataType': 'json',--}}
+{{--//                    url: 'mapLocation',--}}
+{{--//                    'success': function (data) {--}}
+{{--//--}}
+{{--//                        for (index in data) {--}}
+{{--//                            // console.log(data);--}}
+{{--//                            mapLocationMarkers.push(data[index].village_name_text);--}}
+{{--//--}}
+{{--//                        }--}}
+{{--//--}}
+{{--//                    }--}}
+{{--//                });--}}
+{{--//                markLocations(mapLocationMarkers);--}}
+{{--//                return mapLocationMarkers;--}}
+{{--//            }();--}}
+{{--//--}}
+{{--//        }--}}
+{{--//--}}
+{{--//        function markLocations(locationdata){--}}
+{{--//--}}
+{{--//            var locations = locationdata;--}}
+{{--//--}}
+{{--//            var nooflocations = locations.length;--}}
+{{--//            for(var i=0;i<!--<nooflocations;-->i++){--}}
+{{--//                codeAddress(locations[i]);--}}
+{{--//            }--}}
+{{--//        }--}}
+{{--//        function codeAddress(address) {--}}
+{{--//--}}
+{{--//            geocoder.geocode( { 'address': address}, function(results, status) {--}}
+{{--//                if (status == google.maps.GeocoderStatus.OK) {--}}
+{{--//--}}
+{{--//                    map.setCenter(results[0].geometry.location);--}}
+{{--//                    var marker = new google.maps.Marker({--}}
+{{--//                        map: map,--}}
+{{--//                        position: results[0].geometry.location--}}
+{{--//                    });--}}
+{{--//--}}
+{{--//                } else {--}}
+{{--//                    alert("Geocode was not successful for the following reason: " + status);--}}
+{{--//                }--}}
+{{--//            });--}}
+{{--//        }--}}
+{{--//--}}
+{{--//--}}
+{{--//--}}
+{{--//--}}
+{{--//        google.maps.event.addDomListener(window, 'load', initialize);--}}
