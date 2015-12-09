@@ -103,97 +103,22 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title"> PHI Officer Register</h4>
+                <h4 class="modal-title"> About Interlista Disaster Management System</h4>
             </div>
             <div class="modal-body">
-                {!! Form::open(['url'=>'auth/register'])!!}
-                    <div class="row">
-                        {{--name--}}
-                        <div class="col-md-6">
-                            {!! Form::label('name', trans('validation.attributes.name'), ['class' => '']) !!}
-                            {!! Form::input('name', 'name', old('name'), ['class' => 'form-control','required']) !!}
-                        </div>
-                        {{--nic--}}
-                        <div class="col-md-6">
-                            {!! Form::label('nic_number', trans('NIC'), ['class' => '']) !!}
-                            {!! Form::input('nic_number', 'nic_number', old('nic_number'), ['class' => 'form-control','required']) !!}
-                        </div>
-                        {{--conact number--}}
-                        <div class="col-md-6">
-                            {!! Form::label('contact_number', trans('Contact Number'), ['class' => '']) !!}
-                            {!! Form::input('number', 'contact_number', old('contact_number'), ['class' => 'form-control','required']) !!}
-                        </div>
-                        {{--phi_ref--}}
-                        <div class="col-md-6">
-                            {!! Form::label('phi_ref_number', trans('PHI Referance Number'), ['class' => '']) !!}
-                            {!! Form::input('phi_ref_number', 'phi_ref_number', old('phi_ref_number'), ['class' => 'form-control','required']) !!}
-                        </div>
-                        {{--phi_area--}}
-                        <div class="col-md-6">
-                            {!! Form::label('phi_area', trans('PHI Area'), ['class' => '']) !!}
-                            {{--{!! Form::input('se', 'name', old('name'), ['class' => 'form-control']) !!}--}}
-                            <select class="form-control" name="phi_area" id="districtSelect" autocomplete="off" required>
-                                <option selected>- Select District -</option>
-                                <option value="Ampara">Ampara</option>
-                                <option value="Anuradhapura">Anuradhapura</option>
-                                <option value="Badulla">Badulla</option>
-                                <option value="Batticaloa">Batticaloa</option>
-                                <option value="Colombo">Colombo</option>
-                                <option value="Galle">Galle</option>
-                                <option value="Gampaha">Gampaha</option>
-                                <option value="Hambantota">Hambantota</option>
-                                <option value="Jaffna">Jaffna</option>
-                                <option value="Kalutara">Kalutara</option>
-                                <option value="Kandy">Kandy</option>
-                                <option value="Kegalle">Kegalle</option>
-                                <option value="Kurunegala">Kurunegala</option>
-                                <option value="Mannar">Mannar</option>
-                                <option value="Matara">Matara</option>
-                                <option value="Moneragala">Moneragala</option>
-                                <option value="Mullaitivu">Mullaitivu</option>
-                                <option value="Nuwara Eliya">Nuwara Eliya</option>
-                                <option value="Polonnaruwa">Polonnaruwa</option>
-                                <option value="Puttalam">Puttalam</option>
-                                <option value="Ratnapura">Ratnapura</option>
-                                <option value="Trincomalee">Trincomalee</option>
-                                <option value="Vavuniya">Vavuniya</option>
-                            </select>
-                        </div>
-                        {{--email--}}
-                        <div class="col-md-6">
-                            {!! Form::label('email', trans('validation.attributes.email'), ['class' => '']) !!}
-                            {!! Form::input('email', 'email', old('email'), ['class' => 'form-control','required']) !!}
-                        </div>
-                        {{--password--}}
-                        <div class="col-md-6">
-                            {!! Form::label('password', trans('validation.attributes.password'), ['class' => '']) !!}
-                            {!! Form::input('password', 'password', null, ['class' => 'form-control','required']) !!}
-                        </div>
-                        {{--confirm password--}}
-                        <div class="col-md-6">
-                            {!! Form::label('password_confirmation', trans('validation.attributes.password_confirmation'), ['class' => '']) !!}
-                            {!! Form::input('password', 'password_confirmation', null, ['class' => 'form-control','required']) !!}
-                        </div>
+                <p>
+                    A progressive strategy for managing disasters ensures that loss of life and property is reduced in a disaster event.</p>
+                <p>
+                    Phases of disaster management prepare communities with the knowledge and resources to protect themselves from harm and to manage the response and recovery stages.</p>
+                <p>
+                    <strong>Prevention</strong> and <strong>preparedness</strong> identifies potential risks and the actions that can be taken before a disaster event in order to reduce its impact.</p>
+                <p>
+                    <strong>Response</strong> to a disaster event must be swift and effective to combat the disaster, to assist those affected by it and to make the area safe.</p>
+                <p>
+                    While the effects of a disaster can be sudden, the <strong>recovery</strong> period can place significant long-term strain on a community.</p>
+                <p>
+                    A disaster stricken community needs assistance to regain a proper level of functioning following a disaster.</p>
 
-                        {{--hidden filed for status id--}}
-                        <div class="col-md-6">
-                            {!! Form::hidden('status', 1) !!}
-                        </div>
-
-                        {{--hidden filed for confirmed id--}}
-                        <div class="col-md-6">
-                            {!! Form::hidden('confirmed', 1) !!}
-                        </div>
-
-                        <div class="col-md-offset-8 col-md-2">
-                            {!! Form::submit(trans('labels.register_button'), ['class' => 'btn btn-primary subphi']) !!}
-                        </div>
-                        <div class="col-md-2">
-                            {!! Form::Reset(trans('Clear'), ['class' => 'btn btn-danger']) !!}
-                        </div>
-                        </div>
-                    </div>
-                {!! Form::close() !!}
             </div>
         </div>
 
