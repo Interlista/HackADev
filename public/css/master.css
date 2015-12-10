@@ -1,0 +1,116 @@
+body{
+  margin: 0xp;
+  padding: 0px;
+  background-image: url(../img/de.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+}
+a:active{
+  text-decoration: none;
+}
+.header .row{
+  background-color:#1f1f21;
+  margin-top: 0px;
+  color: white;
+  padding: 10px;
+}
+
+.maintopic{
+  color: white;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btnrow{
+  opacity:1;
+  padding: 0px;
+  margin-top: 140px;
+  background-color: #1f1f21;
+  height: 155px;
+}
+
+.btncol{
+  margin-top: 30px;
+}
+
+.middlepanel{
+  height: 160px;
+}
+.logoimage{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logoimage{
+  margin:auto;
+}
+.adminbtn{
+
+  margin: 2px;
+background-color:  #f64b39 !important;
+color: white;
+  border: 0px;
+}
+.btnlogin{
+  padding: 5px !important;
+  margin: 2px !important;
+}
+.btnlogin:hover{
+  background-color: white;
+  color: #ff4d50;
+}
+.registertxt{
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Oswald', sans-serif;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+.btnmain{
+
+  background-color: #eb3d34;
+  padding: 30px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border:2px solid  #eb3d34;
+
+}
+.btnmain:hover  {
+  background-color: white;
+  color:  #eb3d34;
+  text-decoration: none;
+}
+.logininput{
+  margin: 2px !important;
+}
+.btnadminsrator{
+  background-color: #eb3d34;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  border:2px solid  #eb3d34;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  }
+
+.btnadminsrator a{
+  color: white;
+}
+
+.registerbtn{
+  margin-top: 30px;
+  color: #b0bec5;
+  font-size: 25px;
+}
+.hero-text{
+  margin-bottom: 30px !important;
+}
