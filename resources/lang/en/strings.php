@@ -20,7 +20,7 @@ return [
     'backend' => [
         'WELCOME' => 'WELCOME',
         'dashboard_title' => 'Administrative Dashboard',
-        'phioff_title' => 'Department Survey', //Custom made by Ravindu
+        'phioff_title' => 'Emergency System', //Custom made by Ravindu
         'mohoff_title' => 'Admin Level', //Custom made by Ravindu
     ],
     'based_on' => [

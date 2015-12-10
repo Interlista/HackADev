@@ -2,7 +2,7 @@
 
 @section('page-header')
     <h1>
-        Create a Communicable Disease Report
+        New Disaster Contact Entry
         <small>{{ trans('strings.backend.phioff_title') }}</small>
     </h1>
 @endsection
@@ -60,7 +60,7 @@
                         {!! Form::textarea('disease_confirmed_text', null, ['class' => 'form-control', 'placeholder' => 'Confirmed Disease','required']) !!}
                     </div>
 
-                    <br/>
+                   </div>
 
             <div class="form-group">
                         {!! Form::submit('Record',['class'=>'btn btn-success col-md-2 col-md-offset-1'])!!}
