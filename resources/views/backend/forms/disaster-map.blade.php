@@ -16,7 +16,7 @@
         }
     </style>
 
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0VNngrDJcJB5fXjoU40-hspXMamVKb8k"></script>
 @endsection
 
 @section('breadcrumbs')
@@ -43,8 +43,8 @@
             {{--goole map show location --}}
             <div class="row">
 
-                <div  id="map" class="col-md-8">
-                    <marker  position="kandy"  ></marker>
+                <div  id="gmap" class="col-md-8">
+
                 </div>
 
                 <div id="content_area" class="col-md-4">
@@ -76,7 +76,7 @@
                     {!! Form::label('risk_level','Risk', ['class' => 'col-sm-4 control-label']) !!}
                     <div class="col-lg-8">
                         <select class="form-control" name="risk_level" id="risk_level" autocomplete="off" required>
-                            <option selected>- Select District -</option>
+                            <option selected>- Select Risk Level -</option>
                             <option value="1">High</option>
                             <option value="2">Medium</option>
                             <option value="3">Low</option>>
@@ -136,7 +136,7 @@
             });
         }
 
-        window.onload = function () { initialize() };
+        initialize();
     </script>
 
 

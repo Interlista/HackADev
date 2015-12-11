@@ -4,6 +4,7 @@ use App\communicable_disease;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\Access\User\InsertLocation;
 use App\Http\Requests\Backend\Access\User\InsertPhiRequest;
+use App\Http\Requests\Backend\Access\User\InsertContact;
 use App\Repositories\Backend\User\UserContract;
 use App\Repositories\Backend\Role\RoleRepositoryContract;
 use App\Repositories\Frontend\Auth\AuthenticationContract;
@@ -240,6 +241,21 @@ class UserController extends Controller {
 				'lat'  		        =>$data['lat'],
 				'long'              =>$data['long'],
 				'risk_level'    	=>$data['risk_level'],
+			]);
+
+		return Redirect::back()->with('message','Save Successful !');
+	}
+
+	public function insertContact(InsertContact $request){
+		$data = Input::all();
+
+		$id = DB::table('contact_list')->insertGetId(
+			[
+				'contact_name'     =>$data['contact_name'],
+				'disaster_id'  	   =>$data['disaster_id'],
+				'contact_number'   =>$data['contact_number'],
+				'address'    	=>$data['address'],
+				'other_data' => $data['other_data'],
 			]);
 
 		return Redirect::back()->with('message','Save Successful !');

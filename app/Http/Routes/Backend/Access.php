@@ -38,6 +38,9 @@ $router->group([
 		//Add location details
 		post('insert/location', 'UserController@insertLocation');
 
+		//Add contact details
+		post('insert/contacts', 'UserController@insertContact');
+
 		//Add Book Entry
 		get('new-contact','UserController@newcontact');
 
