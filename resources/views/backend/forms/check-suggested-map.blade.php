@@ -89,7 +89,7 @@
 
 
 
-                            <center><h2>InstaFlix</h2></center>
+
                             <div class="">
                                 <input type="search" class="form-control" id="input-search" placeholder="Search here..." >
                             </div>
@@ -128,7 +128,7 @@
                                                 <td>Latitude</td>
                                                 <td>Risk level</td>
                                                 <td>Other Info</td>
-                                                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Approve</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a></td>
+                                                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicons glyphicons-screenshot"></span> View</a><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Approve</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a></td>
                                             </tr>
 
 
