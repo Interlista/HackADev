@@ -13,6 +13,27 @@ return [
     |
     */
 
+
+    //Super User Access
+    'add_contact' => 'New Emergency Contact',
+    'add_map' => 'New Risk Location',
+    'view_contact_suggestion' => 'Suggested Contacts',
+    'view_map_suggestion' => 'Suggested Locations',
+    'check_analysis' => 'Analysis Monitor',
+    'register_dim' => 'Register Hardware',
+
+
+    //Normal User
+    'suggest_contact' => 'Suggest Contacts',
+    'suggest_map' => 'Suggest Risk Locations',
+    'view_suggest_contact' => 'View My Suggestions',
+    'search_contact' => 'Search Emergency Contact',
+
+
+    'user_lvl' => 'User Panel',
+    'admin_lvl' => 'Admin Panel',
+
+
     'phi_admin' => 'User Panel',
     'general' => 'Admin Panel',
     'phi_insert' =>'Create Report ',
