@@ -29,6 +29,11 @@ $router->group([
 		//disaster map
 		get('add-map', 'UserController@addmap');
 
+		// view suggested contacts for admin
+		get('suggested-contact', 'UserController@suggestedcontact');
+
+
+
 
 		//MOH Root
 		//get('mohDashboard','UserController@mohIndex');
