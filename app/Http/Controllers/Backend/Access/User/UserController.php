@@ -276,7 +276,7 @@ class UserController extends Controller {
 		return Redirect::back()->with('message','Save Successful !');
 	}
 
-	//method to add contact_details
+	//method to add contact_details for suggesting = 0
 	public function insertContact(InsertContact $request){
 		$data = Input::all();
 		$notapproved = 0;
@@ -291,6 +291,24 @@ class UserController extends Controller {
 				'address'    	=>$data['address'],
 				'other_data' => $data['other_data'],
 				'approved' => $notapproved,
+			]);
+
+		return Redirect::back()->with('message','Save Successful !');
+	}
+
+	//method to add contact_details for admin = 1
+	public function directInsertContacts(InsertContact $request){
+		$data = Input::all();
+		$approved = 1;
+
+		$id = DB::table('contact_list')->insertGetId(
+			[
+				'contact_name'     =>$data['contact_name'],
+				'disaster_id'  	   =>$data['disaster_id'],
+				'contact_number'   =>$data['contact_number'],
+				'address'    	=>$data['address'],
+				'other_data' => $data['other_data'],
+				'approved' => $approved,
 			]);
 
 		return Redirect::back()->with('message','Save Successful !');
