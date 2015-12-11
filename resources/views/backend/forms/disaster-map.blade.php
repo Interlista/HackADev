@@ -4,7 +4,7 @@
 
 @section('page-header')
     <h1>
-        Dengue Infected Areas - Map View
+        Disaster Areas - Map View
         <small>{{ trans('strings.backend.mohoff_title') }}</small>
     </h1>
 
