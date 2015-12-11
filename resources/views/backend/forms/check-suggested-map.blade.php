@@ -2,7 +2,7 @@
 
 @section('page-header')
     <h1>
-        View Emergency Contact
+        Check Suggested Maps from Users
         <small>{{ trans('strings.backend.phioff_title') }}</small>
     </h1>
 @endsection
@@ -50,6 +50,23 @@
             span.hidden {
                 visibility: hidden;
             }
+
+
+            <!-- Table Customizations -->
+
+            .custab{
+                border: 1px solid #ccc;
+                padding: 5px;
+                margin: 5% 0;
+                box-shadow: 3px 3px 2px #ccc;
+                transition: 0.5s;
+            }
+            .custab:hover{
+                box-shadow: 3px 3px 0px transparent;
+                transition: 0.5s;
+            }
+
+            
         </style>
 
 
@@ -74,7 +91,7 @@
 
 
                             <div class="">
-                                <input type="search" class="form-control" id="input-search" placeholder="Search For Movie..." >
+                                <input type="search" class="form-control" id="input-search" placeholder="Search here..." >
                             </div>
                             <br>
                             <br>
@@ -88,10 +105,10 @@
                                     <a href="#" class="btn btn-primary btn-xs pull-right"><b>+</b>  </a>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Contact Name</th>
-                                        <th>Disaster Type</th>
-                                        <th>Contact No</th>
-                                        <th>Address</th>
+                                        <th>Area Name</th>
+                                        <th>Logitude</th>
+                                        <th>Latitude</th>
+                                        <th>Risk level</th>
                                         <th>Other Info</th>
 
                                     </tr>
@@ -103,16 +120,16 @@
 
 
 
-                                        @foreach ($sugData as $data)
+
                                             <tr>
-                                                <td>{!! $data->id !!}</td>
-                                                <td>{!! $data->contact_name !!}</td>
-                                                <td>{!! $data->disaster_id !!}</td>
-                                                <td>{!! $data->contact_number !!}</td>
-                                                <td>{!! $data->address !!}</td>
-                                                <td>{!! $data->other_data !!}</td>
+                                                <td>2</td>
+                                                <td>Area Name</td>
+                                                <td>Logitude</td>
+                                                <td>Latitude</td>
+                                                <td>Risk level</td>
+                                                <td>Other Info</td>
+                                                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicons glyphicons-screenshot"></span> View</a><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Approve</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a></td>
                                             </tr>
-                                        @endforeach
 
 
 

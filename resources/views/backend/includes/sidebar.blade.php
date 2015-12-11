@@ -28,9 +28,9 @@
                 @permission('moh_access_management')
                   @permission('view-access-management')
                   <li class="header">{{ trans('menus.user_lvl') }}</li>
-                  <li class="{{ Active::pattern('') }}"><a href="{!!url('admin/access/suggested-contact')!!}"><span>{{ trans('menus.search_contact') }}</span></a></li>
-                  <li class="{{ Active::pattern('') }}"><a href="{!!url('admin/access/analytics')!!}"><span>{{ trans('menus.suggest_contact') }}</span></a></li>
-                  <li class="{{ Active::pattern('') }}"><a href="{!!url('admin/access/users')!!}"><span>{{ trans('menus.suggest_map') }}</span></a></li>
+                  <li class="{{ Active::pattern('') }}"><a href="{!!url('admin/access/search-contact')!!}"><span>{{ trans('menus.search_contact') }}</span></a></li>
+                  <li class="{{ Active::pattern('') }}"><a href="{!!url('admin/access/suggest-contact')!!}"><span>{{ trans('menus.suggest_contact') }}</span></a></li>
+                  <li class="{{ Active::pattern('') }}"><a href="{!!url('admin/access/suggest-disaster-area')!!}"><span>{{ trans('menus.suggest_map') }}</span></a></li>
                   <li class="{{ Active::pattern('') }}"><a href="{!!url('admin/access/analytics')!!}"><span>{{ trans('menus.view_suggest_contact') }}</span></a></li>
 
                   {{--<li class="{{ Active::pattern('') }}"><a href="{!!url('admin/access/patientDetail')!!}"><span>{{ trans('menus.moh_detail') }}</span></a></li>--}}
@@ -44,7 +44,7 @@
                 <li><a href="{!!url('admin/access/new-contact')!!}">{{ trans('menus.add_contact') }}</a></li>
                 <li><a href="{!!url('admin/access/add-map')!!}">{{ trans('menus.add_map') }}</a></li>
                   <li><a href="{!!url('admin/access/user-suggested-contact')!!}">{{ trans('menus.view_contact_suggestion') }}</a></li>
-                  <li><a href="{!!url('admin/access/PHI/CommunicableDiseaseRegistration/')!!}">{{ trans('menus.view_map_suggestion') }}</a></li>
+                  <li><a href="{!!url('admin/access/user-suggested-maps')!!}">{{ trans('menus.view_map_suggestion') }}</a></li>
                   <li><a href="{!!url('admin/access/report')!!}">{{ trans('menus.check_analysis') }}</a></li>
                   <li><a href="{!!url('admin/access/PHI/CommunicableDiseaseRegistration/')!!}">{{ trans('menus.register_dim') }}</a></li>
 

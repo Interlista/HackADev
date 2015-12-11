@@ -85,7 +85,7 @@
                     </div><!--form control-->
 
                     <div class="form-group">
-                        {!! Form::submit('Record',['class'=>'btn btn-success col-md-3 col-md-offset-5'])!!}
+                        {!! Form::submit('Suggest',['class'=>'btn btn-success col-md-3 col-md-offset-5'])!!}
                     </div>
                 </div>
 
