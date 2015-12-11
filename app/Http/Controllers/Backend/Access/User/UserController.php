@@ -241,6 +241,8 @@ class UserController extends Controller {
 				'long'              =>$data['long'],
 				'risk_level'    	=>$data['risk_level'],
 			]);
+
+		return Redirect::back()->with('message','Save Successful !');
 	}
 
 	public function mohAnalytics()
