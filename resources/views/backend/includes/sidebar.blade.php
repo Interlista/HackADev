@@ -22,7 +22,6 @@
               {{--main dashboard & user Managemant--}}
                 @permission('view-backend')
                <li class="{{ Active::pattern('') }}"><a href="{!!route('backend.dashboard')!!}"><span>{{ trans('menus.dashboard') }}</span></a></li>
-               <li class="{{ Active::pattern('') }}"><a href="{!!url('admin/access/mohDashboard')!!}"><span>{{ trans('menus.mohdashboard') }}</span></a></li>
                 @endauth
                 {{--MOH User--}}
                 @permission('moh_access_management')

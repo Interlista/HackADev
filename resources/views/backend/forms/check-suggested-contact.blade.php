@@ -89,9 +89,8 @@
 
 
 
-                            <center><h2>InstaFlix</h2></center>
                             <div class="">
-                                <input type="search" class="form-control" id="input-search" placeholder="Search For Movie..." >
+                                <input type="search" class="form-control" id="input-search" placeholder="Search..." >
                             </div>
                             <br>
                             <br>
@@ -102,41 +101,44 @@
                                 <table class="table table-striped custab">
 
                                     <thead>
-                                    <a href="#" class="btn btn-primary btn-xs pull-right"><b>+</b>  </a>
+
                                     <tr>
-                                        <th>ID</th>
+
                                         <th>Contact Name</th>
                                         <th>Disaster Type</th>
                                         <th>Contact No</th>
                                         <th>Address</th>
-                                        <th>Other Info</th>
+
 
                                     </tr>
                                     </thead>
 
-                                // add foreach here
+
+                                    @foreach ($data as $dat)
                                 <div class="items col-xs-12 col-sm-6 col-md-6 col-lg-6 clearfix">
                                     <div class="info-block block-info clearfix">
 
 
 
 
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Products</td>
-                                                <td>Main Products</td>
-                                                <td>Products</td>
-                                                <td>Main Products</td>
-                                                <td>Products</td>
-                                                <td>Main Products</td>
-                                                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
-                                            </tr>
+
+                                        <tr>
+
+                                            <td>{!! $dat->contact_name !!}</td>
+                                            <td>{!! $dat->disaster_id !!}</td>
+                                            <td>{!! $dat->contact_number !!}</td>
+                                            <td>{!! $dat->address !!}</td>
+                                            <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Approve</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a></td>
+
+                                        </tr>
+
 
 
 
                                     </div>
                                 </div>
-                                    // end foreach here
+                                    @endforeach
+
 
                                 </table>
 

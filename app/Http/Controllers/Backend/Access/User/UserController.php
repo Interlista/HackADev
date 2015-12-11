@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers\Backend\Access\User;
 
 use App\communicable_disease;
+use App\contact_list;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\Access\User\InsertLocation;
 use App\Http\Requests\Backend\Access\User\InsertPhiRequest;
@@ -83,12 +84,14 @@ class UserController extends Controller {
 
 	public function suggestedcontact()
 	{
-		return view('backend.forms.view-suggested-contact');
+		$data =contact_list::where('approved', '=', '1')->get();
+		return view('backend.forms.view-suggested-contact',compact('data'));
 	}
 
 	public function usersuggestedcontact()
 	{
-		return view('backend.forms.check-suggested-contact');
+		$data =contact_list::where('approved', '=', '0')->get();
+		return view('backend.forms.check-suggested-contact',compact('data'));
 	}
 
 	public function usersuggestedmap()
@@ -276,6 +279,9 @@ class UserController extends Controller {
 	//method to add contact_details
 	public function insertContact(InsertContact $request){
 		$data = Input::all();
+		$notapproved = 0;
+
+
 
 		$id = DB::table('contact_list')->insertGetId(
 			[
@@ -284,18 +290,13 @@ class UserController extends Controller {
 				'contact_number'   =>$data['contact_number'],
 				'address'    	=>$data['address'],
 				'other_data' => $data['other_data'],
-				'approved' => $data['approved'],
+				'approved' => $notapproved,
 			]);
 
 		return Redirect::back()->with('message','Save Successful !');
 	}
 
-	//To obtain suggested contact details
-	public function suggestedContactDetail()
-	{
-		$data=contact_list::get();
-		return view ('backend.forms.view-suggested-contact')->with('sugData',$data);
-	}
+
 
 	public function mohAnalytics()
 	{

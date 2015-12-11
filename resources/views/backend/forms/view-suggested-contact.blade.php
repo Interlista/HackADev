@@ -98,26 +98,27 @@
                                     </thead>
 
                                 // add foreach here
+                                    @foreach ($dataa as $dat)
                                 <div class="items col-xs-12 col-sm-6 col-md-6 col-lg-6 clearfix">
                                     <div class="info-block block-info clearfix">
 
 
 
-                                        @foreach ($sugData as $data)
+
                                             <tr>
-                                                <td>{!! $data->id !!}</td>
-                                                <td>{!! $data->contact_name !!}</td>
-                                                <td>{!! $data->disaster_id !!}</td>
-                                                <td>{!! $data->contact_number !!}</td>
-                                                <td>{!! $data->address !!}</td>
-                                                <td>{!! $data->other_data !!}</td>
+                                                <td>{!! $dat->contact_name !!}</td>
+                                                <td>{!! $dat->disaster_id !!}</td>
+                                                <td>{!! $dat->contact_number !!}</td>
+                                                <td>{!! $dat->address !!}</td>
+                                                <td>{!! $dat->other_data !!}</td>
                                             </tr>
-                                        @endforeach
+
 
 
 
                                     </div>
                                 </div>
+                                    @endforeach
                                     // end foreach here
 
                                 </table>
