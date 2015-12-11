@@ -28,9 +28,9 @@
                 @permission('moh_access_management')
                   @permission('view-access-management')
                   <li class="header">{{ trans('menus.user_lvl') }}</li>
-                  <li class="{{ Active::pattern('') }}"><a href="{!!url('admin/access/suggested-contact')!!}"><span>{{ trans('menus.search_contact') }}</span></a></li>
-                  <li class="{{ Active::pattern('') }}"><a href="{!!url('admin/access/analytics')!!}"><span>{{ trans('menus.suggest_contact') }}</span></a></li>
-                  <li class="{{ Active::pattern('') }}"><a href="{!!url('admin/access/users')!!}"><span>{{ trans('menus.suggest_map') }}</span></a></li>
+                  <li class="{{ Active::pattern('') }}"><a href="{!!url('admin/access/search-contact')!!}"><span>{{ trans('menus.search_contact') }}</span></a></li>
+                  <li class="{{ Active::pattern('') }}"><a href="{!!url('admin/access/suggest-contact')!!}"><span>{{ trans('menus.suggest_contact') }}</span></a></li>
+                  <li class="{{ Active::pattern('') }}"><a href="{!!url('admin/access/suggest-disaster-area')!!}"><span>{{ trans('menus.suggest_map') }}</span></a></li>
                   <li class="{{ Active::pattern('') }}"><a href="{!!url('admin/access/analytics')!!}"><span>{{ trans('menus.view_suggest_contact') }}</span></a></li>
 
                   {{--<li class="{{ Active::pattern('') }}"><a href="{!!url('admin/access/patientDetail')!!}"><span>{{ trans('menus.moh_detail') }}</span></a></li>--}}

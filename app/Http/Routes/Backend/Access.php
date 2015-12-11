@@ -30,7 +30,7 @@ $router->group([
 		get('add-map', 'UserController@addmap');
 
 		// view suggested contacts for admin
-		get('suggested-contact', 'UserController@suggestedcontact');
+		get('search-contact', 'UserController@suggestedcontact');
 
 
 		// view suggested contacts for admin
@@ -39,7 +39,11 @@ $router->group([
 		// view suggested contacts for admin
 		get('user-suggested-maps', 'UserController@usersuggestedmap');
 
+		// view suggested contacts for admin
+		get('suggest-disaster-area', 'UserController@suggestdisaster');
 
+		// view suggested contacts for admin
+		get('suggest-contact', 'UserController@suggestcontact');
 
 
 		//MOH Root

@@ -72,7 +72,7 @@
 
 
 
-                            <center><h2>InstaFlix</h2></center>
+
                             <div class="">
                                 <input type="search" class="form-control" id="input-search" placeholder="Search For Movie..." >
                             </div>
