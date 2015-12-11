@@ -27,7 +27,6 @@ class RegisterRequest extends Request {
 	{
 		return [
 			'name' 		=> 'required|max:255',
-			'nic_number' => 'required|max:10',
 			'contact_number' => 'required',
 			'email' 	=> 'required|email|max:255|unique:users',
 			'password'  => 'required|confirmed|min:6',

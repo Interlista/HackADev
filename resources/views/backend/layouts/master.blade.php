@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="_token" content="{{ csrf_token() }}" />
-        <title>LOCATION TRACKING SYSTEM FOR DENGUE INFECTED AREA</title>
+        <title>INTERLISTA Disaster Management System</title>
         <meta name="description" content="@yield('meta_description', 'Default Description')">
         {{--<meta name="author" content="@yield('author', 'Anthony Rappa')">--}}
         @yield('meta')
@@ -38,7 +38,7 @@
 
 
     </head>
-    <body class="skin-red">
+    <body class="skin-blue">
         <div class="wrapper">
           @include('backend.includes.header')
           @include('backend.includes.sidebar')

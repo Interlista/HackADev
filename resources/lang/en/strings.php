@@ -16,11 +16,11 @@ return [
     'here' => 'Here',
     'report' => 'Report Edit',
     'all_rights_reserved' => 'All rights reserved.',
-    'boilerplate_link' => 'LOCATION TRACKING SYSTEM FOR DENGUE INFECTED AREAS',
+    'boilerplate_link' => 'Interlista Disaster Management System',
     'backend' => [
         'WELCOME' => 'WELCOME',
         'dashboard_title' => 'Administrative Dashboard',
-        'phioff_title' => 'PHI Officer', //Custom made by Ravindu
+        'phioff_title' => 'Department Survey', //Custom made by Ravindu
         'mohoff_title' => 'Admin Level', //Custom made by Ravindu
     ],
     'based_on' => [

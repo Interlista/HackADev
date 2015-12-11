@@ -49,72 +49,72 @@ class AuthController extends Controller
             $this->auth->create($request->all());
             return redirect()->route('home')->withFlashSuccess("Your account was successfully created. We have sent you an e-mail to confirm your account.");
         } else {
-//          Use native auth login because do not need to check status when registering
-//          User::create(auth()->login($this->auth->create($request->all()))); - NOT Working
-            $getID=$price = DB::table('users')->max('id');
-            if(Input::get('phi_ref_number')!=null) {
-                User::create($request->all());
-                DB::table('permission_user')->insert(
-                    [
-                        'permission_id' => '1',
-                        'user_id' => $getID + 1
-                    ]
-                );
-                DB::table('permission_user')->insert(
-                    [
-                        'permission_id' => '2',
-                        'user_id' => $getID + 1
-                    ]
-                );
-                DB::table('permission_user')->insert(
-                    [
-                        'permission_id' => '24',
-                        'user_id' => $getID + 1
-                    ]
-                );
-                DB::table('permission_user')->insert(
-                    [
-                        'permission_id' => '6',
-                        'user_id' => $getID + 1
-                    ]
-                );
-
-            }
-
-            if(Input::get('moh_ref_number')!=null)
-            {
-                User::create($request->all());
-                DB::table('permission_user')->insert(
-                    [
-                        'permission_id' => '6',
-                        'user_id' => $getID + 1
-                    ]
-                );
-                DB::table('permission_user')->insert(
-                    [
-                        'permission_id' => '2',
-                        'user_id' => $getID + 1
-                    ]
-                );
-                DB::table('permission_user')->insert(
-                    [
-                        'permission_id' => '25',
-                        'user_id' => $getID + 1
-                    ]
-                );
-                DB::table('permission_user')->insert(
-                    [
-                        'permission_id' => '4',
-                        'user_id' => $getID + 1
-                    ]
-                );
-                DB::table('permission_user')->insert(
-                    [
-                        'permission_id' => '1',
-                        'user_id' => $getID + 1
-                    ]
-                );
-            }
+          //Use native auth login because do not need to check status when registering
+        //  User::create(auth()->login($this->auth->create($request->all())));
+//            $getID=$price = DB::table('users')->max('id');
+//            if(Input::get('phi_ref_number')!=null) {
+//                User::create($request->all());
+//                DB::table('permission_user')->insert(
+//                    [
+//                        'permission_id' => '1',
+//                        'user_id' => $getID + 1
+//                    ]
+//                );
+//                DB::table('permission_user')->insert(
+//                    [
+//                        'permission_id' => '2',
+//                        'user_id' => $getID + 1
+//                    ]
+//                );
+//                DB::table('permission_user')->insert(
+//                    [
+//                        'permission_id' => '24',
+//                        'user_id' => $getID + 1
+//                    ]
+//                );
+//                DB::table('permission_user')->insert(
+//                    [
+//                        'permission_id' => '6',
+//                        'user_id' => $getID + 1
+//                    ]
+//                );
+//
+//            }
+//
+//            if(Input::get('moh_ref_number')!=null)
+//            {
+//                User::create($request->all());
+//                DB::table('permission_user')->insert(
+//                    [
+//                        'permission_id' => '6',
+//                        'user_id' => $getID + 1
+//                    ]
+//                );
+//                DB::table('permission_user')->insert(
+//                    [
+//                        'permission_id' => '2',
+//                        'user_id' => $getID + 1
+//                    ]
+//                );
+//                DB::table('permission_user')->insert(
+//                    [
+//                        'permission_id' => '25',
+//                        'user_id' => $getID + 1
+//                    ]
+//                );
+//                DB::table('permission_user')->insert(
+//                    [
+//                        'permission_id' => '4',
+//                        'user_id' => $getID + 1
+//                    ]
+//                );
+//                DB::table('permission_user')->insert(
+//                    [
+//                        'permission_id' => '1',
+//                        'user_id' => $getID + 1
+//                    ]
+//                );
+//            }
 
 
             return Redirect::back();
