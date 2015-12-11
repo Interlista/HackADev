@@ -26,10 +26,12 @@ $router->group([
 		post('PHI/Insert', 'UserController@phiInsert');
 
 
+		//disaster map
+		get('add-map', 'UserController@addmap');
 
 
 		//MOH Root
-		get('mohDashboard','UserController@mohIndex');
+		//get('mohDashboard','UserController@mohIndex');
 		get('analytics' , 'UserController@mohAnalytics');
 		get('patientDetail','UserController@mohPatientDetailsView');
 

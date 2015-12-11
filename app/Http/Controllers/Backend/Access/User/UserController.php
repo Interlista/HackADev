@@ -75,10 +75,11 @@ class UserController extends Controller {
 		return view('backend.forms.register_book_entry');
 	}
 
-//	public function PhiView()
-//	{
-//		return view ('backend.forms.phidataList');
-//	}
+	public function addmap()
+	{
+		return view('backend.forms.disaster-map');
+	}
+
 	
     public function phiInsert(InsertPhiRequest $request)
 	{
@@ -227,15 +228,7 @@ class UserController extends Controller {
 		return Redirect::back()->with('message','Save Successful !');
 	}
 	//MOH Functions
-	public function mohIndex()
-	{
-		$state = DB::table('communicable_diseases')
-			->select('village_name_text')
-			->get();
 
-//		return response()->json($state);
-		return view ('backend.forms.mohIndex')->with('village',$state);
-	}
 
 	//method to add location_details
 	public function insertLocation(InsertLocation $request){
