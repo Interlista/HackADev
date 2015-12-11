@@ -32,8 +32,8 @@ $router->group([
 
 		//MOH Root
 		//get('mohDashboard','UserController@mohIndex');
-		get('analytics' , 'UserController@mohAnalytics');
-		get('patientDetail','UserController@mohPatientDetailsView');
+		//get('analytics' , 'UserController@mohAnalytics');
+		//get('patientDetail','UserController@mohPatientDetailsView');
 
 		//Add location details
 		post('insert/location', 'UserController@insertLocation');
@@ -42,10 +42,10 @@ $router->group([
 		get('new-contact','UserController@newcontact');
 
 		//common to PHI & MOH
-		get('report','UserController@mohreport')->name('admin.access.users.report');
-		get('report/editData/{id}','UserController@mohreportEditData')->name('admin.access.editdata');
-		post('report/edit','UserController@mohreportEdit');
-		get('report/delete/{id}','UserController@mohreportDelete')->name('admin.access.deletereport');
+		//get('report','UserController@mohreport')->name('admin.access.users.report');
+		//get('report/editData/{id}','UserController@mohreportEditData')->name('admin.access.editdata');
+		//post('report/edit','UserController@mohreportEdit');
+		//get('report/delete/{id}','UserController@mohreportDelete')->name('admin.access.deletereport');
 
 
 		get('chartApi', function(){
