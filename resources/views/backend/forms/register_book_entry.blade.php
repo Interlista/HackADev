@@ -71,11 +71,16 @@
                 </div>
                 </div>
 
-            <div class="form-group">
-                        {!! Form::submit('Record',['class'=>'btn btn-success col-md-2 col-md-offset-1'])!!}
-                    </div>
+                {{--hidden filed for approved id--}}
+                <div class="col-md-4">
+                {!! Form::hidden('approved', 0) !!}
+                </div>
 
-                    {!! Form::close() !!}
+                <div class="form-group">
+                        {!! Form::submit('Record',['class'=>'btn btn-success col-md-2 col-md-offset-1'])!!}
+                </div>
+
+            {!! Form::close() !!}
         </div><!-- /.box-body -->
     </div><!--box box-success-->
 

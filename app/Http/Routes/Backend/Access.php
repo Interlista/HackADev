@@ -51,6 +51,9 @@ $router->group([
 		//Add contact details
 		post('insert/contacts', 'UserController@insertContact');
 
+		//Suggest the contact details
+		get('view/suggestedDetails', 'UserController@suggestedContactDetail');
+
 		//Add Book Entry
 		get('new-contact','UserController@newcontact');
 

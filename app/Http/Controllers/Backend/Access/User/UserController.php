@@ -255,6 +255,7 @@ class UserController extends Controller {
 		return Redirect::back()->with('message','Save Successful !');
 	}
 
+	//method to add contact_details
 	public function insertContact(InsertContact $request){
 		$data = Input::all();
 
@@ -265,9 +266,17 @@ class UserController extends Controller {
 				'contact_number'   =>$data['contact_number'],
 				'address'    	=>$data['address'],
 				'other_data' => $data['other_data'],
+				'approved' => $data['approved'],
 			]);
 
 		return Redirect::back()->with('message','Save Successful !');
+	}
+
+	//To obtain suggested contact details
+	public function suggestedContactDetail()
+	{
+		$data=contact_list::get();
+		return view ('backend.forms.view-suggested-contact')->with('sugData',$data);
 	}
 
 	public function mohAnalytics()

@@ -103,16 +103,16 @@
 
 
 
-
+                                        @foreach ($sugData as $data)
                                             <tr>
-                                                <td>2</td>
-                                                <td>Products</td>
-                                                <td>Main Products</td>
-                                                <td>Products</td>
-                                                <td>Main Products</td>
-                                                <td>Products</td>
-                                                <td>Main Products</td>
+                                                <td>{!! $data->id !!}</td>
+                                                <td>{!! $data->contact_name !!}</td>
+                                                <td>{!! $data->disaster_id !!}</td>
+                                                <td>{!! $data->contact_number !!}</td>
+                                                <td>{!! $data->address !!}</td>
+                                                <td>{!! $data->other_data !!}</td>
                                             </tr>
+                                        @endforeach
 
 
 
