@@ -24,7 +24,7 @@ class InsertLocation extends Request
     public function rules()
     {
         return [
-            'insertLocation' => 'required',
+            'location_name' => 'required',
         ];
     }
 }

@@ -9,7 +9,7 @@
     </h1>
 
     <style>
-        #map {
+        #gmap {
             width: 600px;
             height: 400px;
             background-color: #CCC;
@@ -54,21 +54,21 @@
                     <div class="form-group">
                         {!! Form::label('location_name','Location', ['class' => 'col-sm-4 control-label']) !!}
                     <div class="col-lg-8">
-                        {!! Form::text('location_name', null, ['class' => 'form-control ', 'placeholder' => 'Enter the location details here.' ,'required']) !!}
+                        {!! Form::text('location_name', null, ['class' => 'form-control ', 'id' => 'location_name', 'placeholder' => 'Enter the location details here.' ,'required']) !!}
                     </div>
                     </div><!--form control-->
 
                      <div class="form-group">
                     {!! Form::label('lat_value','Latitude', ['class' => 'col-sm-4 control-label']) !!}
                     <div class="col-lg-8">
-                        {!! Form::text('lat', null, ['class' => 'form-control', 'placeholder' => 'Latitude Value','required']) !!}
+                        {!! Form::text('lat', null, ['class' => 'form-control', 'id' => 'lat', 'placeholder' => 'Latitude Value','required']) !!}
                     </div>
                     </div><!--form control-->
 
                     <div class="form-group">
                     {!! Form::label('lang_value','Longitude', ['class' => 'col-sm-4 control-label']) !!}
                     <div class="col-lg-8">
-                        {!! Form::text('long', null, ['class' => 'form-control', 'placeholder' => 'Longitude Value','required']) !!}
+                        {!! Form::text('long', null, ['class' => 'form-control', 'id' => 'long', 'placeholder' => 'Longitude Value','required']) !!}
                     </div>
                     </div><!--form control-->
 
@@ -105,16 +105,38 @@
     {{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0VNngrDJcJB5fXjoU40-hspXMamVKb8k"></script>--}}
 
     <script>
+        var map;
         function initialize() {
-            var mapCanvas = document.getElementById('map');
-            var mapOptions = {
-                center: new google.maps.LatLng(44.5403, -78.5463),
-                zoom: 8,
+            var myLatlng = new google.maps.LatLng(24.18061975930,79.36565089010);
+            var myOptions = {
+                zoom:7,
+                center: myLatlng,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             }
-            var map = new google.maps.Map(mapCanvas, mapOptions)
+            map = new google.maps.Map(document.getElementById("gmap"), myOptions);
+            // marker refers to a global variable
+            marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map
+            });
+
+            google.maps.event.addListener(map, "click", function(event) {
+                // get lat/lon of click
+                var clickLat = event.latLng.lat();
+                var clickLon = event.latLng.lng();
+
+                // show in input box
+                document.getElementById("lat").value = clickLat.toFixed(4);
+                document.getElementById("long").value = clickLon.toFixed(4);
+
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(clickLat,clickLon),
+                    map: map
+                });
+            });
         }
-        google.maps.event.addDomListener(window, 'load', initialize);
+
+        window.onload = function () { initialize() };
     </script>
 
 
