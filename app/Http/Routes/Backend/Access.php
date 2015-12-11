@@ -15,6 +15,11 @@ $router->group([
 	$router->group(['namespace' => 'User'], function() use ($router) {
 		resource('users', 'UserController', ['except' => ['show']]);
 
+		get('data',function(){
+			$job = DB::select("select value from disaster_data ORDER by id DESC limit 1");
+
+			return Response::json($job);
+		});
 		//PHI Roots
 		get('PHI/CommunicableDiseaseRegistration', 'UserController@PhiDate');
 		//get('PHI/ViewSummary', 'UserController@PhiView');

@@ -51,6 +51,7 @@
             <li class="button adminbtn">{!! link_to_route('backend.dashboard', trans('navs.administration')) !!}</li>
             @endauth
             <li class="button adminbtn">{!! link_to('auth/logout', trans('navs.logout')) !!}</li>
+
         @endif
 
 
@@ -77,6 +78,7 @@
             <div class="buttons">
                 <div class="col-md-3 col-md-offset-2">
                     <a class="button " href="#" data-toggle="modal" data-target="#mohregistermodel" >Admin Level</a>
+
                 </div>
                 <div class="col-md-3 col-md-offset-2">
                     <a class="button learn-more smoothscroll" href="#features" data-toggle="modal" data-target="#phiregistermodel">PHI Level</a>
@@ -306,10 +308,15 @@
     </div>
 </div>
 
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src={{ URL::asset("js/vendor/jquery-1.11.2.min.js") }}></script>
+
 
 
 
