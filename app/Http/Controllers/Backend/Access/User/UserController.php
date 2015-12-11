@@ -90,8 +90,14 @@ class UserController extends Controller {
 	{
 		return view('backend.forms.check-suggested-contact');
 	}
-	
-    public function phiInsert(InsertPhiRequest $request)
+
+	public function usersuggestedmap()
+	{
+		return view('backend.forms.check-suggested-map');
+	}
+
+
+	public function phiInsert(InsertPhiRequest $request)
 	{
 		$data = Input::all();
 

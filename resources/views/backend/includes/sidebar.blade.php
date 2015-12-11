@@ -44,7 +44,7 @@
                 <li><a href="{!!url('admin/access/new-contact')!!}">{{ trans('menus.add_contact') }}</a></li>
                 <li><a href="{!!url('admin/access/add-map')!!}">{{ trans('menus.add_map') }}</a></li>
                   <li><a href="{!!url('admin/access/user-suggested-contact')!!}">{{ trans('menus.view_contact_suggestion') }}</a></li>
-                  <li><a href="{!!url('admin/access/PHI/CommunicableDiseaseRegistration/')!!}">{{ trans('menus.view_map_suggestion') }}</a></li>
+                  <li><a href="{!!url('admin/access/user-suggested-maps')!!}">{{ trans('menus.view_map_suggestion') }}</a></li>
                   <li><a href="{!!url('admin/access/report')!!}">{{ trans('menus.check_analysis') }}</a></li>
                   <li><a href="{!!url('admin/access/PHI/CommunicableDiseaseRegistration/')!!}">{{ trans('menus.register_dim') }}</a></li>
 

@@ -36,6 +36,8 @@ $router->group([
 		// view suggested contacts for admin
 		get('user-suggested-contact', 'UserController@usersuggestedcontact');
 
+		// view suggested contacts for admin
+		get('user-suggested-maps', 'UserController@usersuggestedmap');
 
 
 
