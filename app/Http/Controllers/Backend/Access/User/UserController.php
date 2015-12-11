@@ -80,6 +80,10 @@ class UserController extends Controller {
 		return view('backend.forms.disaster-map');
 	}
 
+	public function suggestedcontact()
+	{
+		return view('backend.forms.view-suggested-contact');
+	}
 	
     public function phiInsert(InsertPhiRequest $request)
 	{

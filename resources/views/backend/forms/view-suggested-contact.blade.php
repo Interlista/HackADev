@@ -2,7 +2,7 @@
 
 @section('page-header')
     <h1>
-        New Disaster Contact Entry
+        View Emergency Contact
         <small>{{ trans('strings.backend.phioff_title') }}</small>
     </h1>
 @endsection
@@ -27,47 +27,108 @@
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
             </div>
         </div><!-- /.box-header -->
-        <div class="box-body">
-            {!! Form::open(['url' => 'admin/access/PHI/Insert', 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'post']) !!}
-
-                <div class="form-group">
-                    {!! Form::label('disease_notified','Service Name', ['class' => 'col-sm-2 control-label']) !!}
-                    <div class="col-lg-4 ">
-                    {!! Form::text('disease_text', null, ['class' => 'form-control ', 'placeholder' => 'Disease Name' ,'required']) !!}
-                    </div>
-                </div><!--form control-->
-
-                {{--//Date Field--}}
-                <div class="form-group">
-                    {!! Form::label('date','Disaster Type', ['class' => 'col-sm-2 control-label']) !!}
-                    <div class="col-lg-4">
-                    {!! Form::input('date','disease_date_text',Carbon\Carbon::today()->format('Y/m/d'), ['class' => 'form-control', 'placeholder' => 'Notified Date','required']) !!}
-                    </div>
-                </div><!--form control-->
-
-                <div class="form-group">
-                    {!! Form::label('disease_confirmed','Contact Number', ['class' => 'col-sm-2 control-label']) !!}
-                    <div class="col-lg-4">
-                    {!! Form::text('disease_confirmed_text', null, ['class' => 'form-control', 'placeholder' => 'Confirmed Disease','required']) !!}
-                    </div>
-                </div><!--form control-->
 
 
-                {{--TODO: Drop down list for distrcts Task Allocated - Ravindu--}}
-                <div class="form-group">
-                {!! Form::label('address','Address', ['class' => 'col-sm-2 control-label']) !!}
-                    <div class="col-lg-4">
-                        {!! Form::textarea('disease_confirmed_text', null, ['class' => 'form-control', 'placeholder' => 'Confirmed Disease','required']) !!}
-                    </div>
+        <style>
 
-                   </div>
+            .info-block
+            {
+                border-right:5px solid #E6E6E6;margin-bottom:25px
+            }
+            .info-block .square-box
+            {
+                width:100px;min-height:110px;margin-right:22px;text-align:center!important;padding:20px 0
+            }
+            .info-block.block-info
+            {
+                border-color:#20819e
+            }
+            .info-block.block-info .square-box
+            {
+                background-color:#20819e;color:#FFF
+            }
+            span.hidden {
+                visibility: hidden;
+            }
+        </style>
 
-            <div class="form-group">
-                        {!! Form::submit('Record',['class'=>'btn btn-success col-md-2 col-md-offset-1'])!!}
-                    </div>
 
-                    {!! Form::close() !!}
-        </div><!-- /.box-body -->
+        <script>
+            $(function() {
+                $('#input-search').on('keyup', function() {
+                    var rex = new RegExp($(this).val(), 'i');
+                    $('.searchable-container .items').hide();
+                    $('.searchable-container .items').filter(function() {
+                        return rex.test($(this).text());
+                    }).show();
+                });
+            });
+        </script>
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+
+
+
+                            <center><h2>InstaFlix</h2></center>
+                            <div class="">
+                                <input type="search" class="form-control" id="input-search" placeholder="Search For Movie..." >
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+
+                            <div class="searchable-container">
+
+                                <table class="table table-striped custab">
+
+                                    <thead>
+                                    <a href="#" class="btn btn-primary btn-xs pull-right"><b>+</b>  </a>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Contact Name</th>
+                                        <th>Disaster Type</th>
+                                        <th>Contact No</th>
+                                        <th>Address</th>
+                                        <th>Other Info</th>
+
+                                    </tr>
+                                    </thead>
+
+                                // add foreach here
+                                <div class="items col-xs-12 col-sm-6 col-md-6 col-lg-6 clearfix">
+                                    <div class="info-block block-info clearfix">
+
+
+
+
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Products</td>
+                                                <td>Main Products</td>
+                                                <td>Products</td>
+                                                <td>Main Products</td>
+                                                <td>Products</td>
+                                                <td>Main Products</td>
+                                            </tr>
+
+
+
+                                    </div>
+                                </div>
+                                    // end foreach here
+
+                                </table>
+
+                            </div>
+
+
+            </div>
+        </div>
+
+
     </div><!--box box-success-->
 
 @endsection
