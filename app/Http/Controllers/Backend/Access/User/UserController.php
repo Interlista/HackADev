@@ -85,6 +85,11 @@ class UserController extends Controller {
 	{
 		return view('backend.forms.view-suggested-contact');
 	}
+
+	public function usersuggestedcontact()
+	{
+		return view('backend.forms.check-suggested-contact');
+	}
 	
     public function phiInsert(InsertPhiRequest $request)
 	{

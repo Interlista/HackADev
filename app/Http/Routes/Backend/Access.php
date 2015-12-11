@@ -33,6 +33,11 @@ $router->group([
 		get('suggested-contact', 'UserController@suggestedcontact');
 
 
+		// view suggested contacts for admin
+		get('user-suggested-contact', 'UserController@usersuggestedcontact');
+
+
+
 
 
 		//MOH Root
