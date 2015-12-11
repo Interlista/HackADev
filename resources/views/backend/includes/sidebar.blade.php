@@ -42,7 +42,7 @@
                 <li class="header">{{ trans('menus.admin_lvl') }}</li>
                 <li class="{{ Active::pattern('') }}"><a href="{!!route('admin.access.user.change-password',Auth::user()->id)!!}"><span>{{ trans('menus.access_management') }}</span></a></li>
                 <li><a href="{!!url('admin/access/report')!!}">{{ trans('menus.add_contact') }}</a></li>
-                <li><a href="{!!url('admin/access/PHI/CommunicableDiseaseRegistration/')!!}">{{ trans('menus.add_map') }}</a></li>
+                <li><a href="{!!url('admin/access/mohDashboard')!!}">{{ trans('menus.add_map') }}</a></li>
                   <li><a href="{!!url('admin/access/report')!!}">{{ trans('menus.view_contact_suggestion') }}</a></li>
                   <li><a href="{!!url('admin/access/PHI/CommunicableDiseaseRegistration/')!!}">{{ trans('menus.view_map_suggestion') }}</a></li>
                   <li><a href="{!!url('admin/access/report')!!}">{{ trans('menus.check_analysis') }}</a></li>
