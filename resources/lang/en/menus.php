@@ -13,8 +13,8 @@ return [
     |
     */
 
-    'phi_admin' => 'PHI Level',
-    'general' => 'Admin Level',
+    'phi_admin' => 'User Panel',
+    'general' => 'Admin Panel',
     'phi_insert' =>'Create Report ',
     'phi_view' => 'View Report',
     'moh_analytics' => 'Summary of the Dengue Patients',
