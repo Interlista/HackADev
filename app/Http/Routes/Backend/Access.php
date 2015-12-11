@@ -25,10 +25,16 @@ $router->group([
 		//get('PHI/ViewSummary', 'UserController@PhiView');
 		post('PHI/Insert', 'UserController@phiInsert');
 
+
+
+
 		//MOH Root
 		get('mohDashboard','UserController@mohIndex');
 		get('analytics' , 'UserController@mohAnalytics');
 		get('patientDetail','UserController@mohPatientDetailsView');
+
+		//Add location details
+		post('insert/location', 'UserController@insertLocation');
 
 		//Add Book Entry
 		get('new-contact','UserController@newcontact');

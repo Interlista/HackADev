@@ -49,7 +49,7 @@
 
                 <div id="content_area" class="col-md-4">
 
-                    {!! Form::open(['url' => 'admin/access/PHI/Insert', 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'post']) !!}
+                    {!! Form::open(['url' => 'admin/access/insert/location', 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'post']) !!}
 
                     <div class="form-group">
                         {!! Form::label('location_name','Location', ['class' => 'col-sm-4 control-label']) !!}
@@ -75,7 +75,7 @@
                     <div class="form-group">
                     {!! Form::label('risk_level','Risk', ['class' => 'col-sm-4 control-label']) !!}
                     <div class="col-lg-8">
-                        <select class="form-control" name="district_name_text" id="district_name_text" autocomplete="off" required>
+                        <select class="form-control" name="risk_level" id="risk_level" autocomplete="off" required>
                             <option selected>- Select District -</option>
                             <option value="1">High</option>
                             <option value="2">Medium</option>

@@ -2,6 +2,7 @@
 
 use App\communicable_disease;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Backend\Access\User\InsertLocation;
 use App\Http\Requests\Backend\Access\User\InsertPhiRequest;
 use App\Repositories\Backend\User\UserContract;
 use App\Repositories\Backend\Role\RoleRepositoryContract;
@@ -234,6 +235,19 @@ class UserController extends Controller {
 
 //		return response()->json($state);
 		return view ('backend.forms.mohIndex')->with('village',$state);
+	}
+
+	//method to add location_details
+	public function insertLocation(InsertLocation $request){
+		$data = Input::all();
+
+		$id = DB::table('location_details')->insertGetId(
+			[
+				'location_name'     =>$data['location_name'],
+				'lat'  		        =>$data['lat'],
+				'long'              =>$data['long'],
+				'risk_level'    	=>$data['risk_level'],
+			]);
 	}
 
 	public function mohAnalytics()
