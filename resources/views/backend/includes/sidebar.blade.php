@@ -24,7 +24,7 @@
                <li class="{{ Active::pattern('') }}"><a href="{!!route('backend.dashboard')!!}"><span>{{ trans('menus.dashboard') }}</span></a></li>
                 @endauth
                 {{--MOH User--}}
-                @permission('moh_access_management')
+                @permission('normal_user_access_managment')
                   @permission('view-access-management')
                   <li class="header">{{ trans('menus.user_lvl') }}</li>
                   <li class="{{ Active::pattern('') }}"><a href="{!!url('admin/access/search-contact')!!}"><span>{{ trans('menus.search_contact') }}</span></a></li>
@@ -37,7 +37,7 @@
                 @endauth
 
                  {{--PHI User --}}
-                @permission('phi_access_management')
+                @permission('app_admin_access_managment')
                 <li class="header">{{ trans('menus.admin_lvl') }}</li>
                 <li class="{{ Active::pattern('') }}"><a href="{!!route('admin.access.user.change-password',Auth::user()->id)!!}"><span>{{ trans('menus.access_management') }}</span></a></li>
                 <li><a href="{!!url('admin/access/new-contact')!!}">{{ trans('menus.add_contact') }}</a></li>

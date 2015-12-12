@@ -11,6 +11,7 @@ use App\Http\Requests\Frontend\Access\RegisterRequest;
 use App\Repositories\Frontend\Auth\AuthenticationContract;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 
@@ -51,33 +52,46 @@ class AuthController extends Controller
         } else {
           //Use native auth login because do not need to check status when registering
         //  User::create(auth()->login($this->auth->create($request->all())));
-//            $getID=$price = DB::table('users')->max('id');
-//            if(Input::get('phi_ref_number')!=null) {
-//                User::create($request->all());
-//                DB::table('permission_user')->insert(
-//                    [
-//                        'permission_id' => '1',
-//                        'user_id' => $getID + 1
-//                    ]
-//                );
-//                DB::table('permission_user')->insert(
-//                    [
-//                        'permission_id' => '2',
-//                        'user_id' => $getID + 1
-//                    ]
-//                );
-//                DB::table('permission_user')->insert(
-//                    [
-//                        'permission_id' => '24',
-//                        'user_id' => $getID + 1
-//                    ]
-//                );
-//                DB::table('permission_user')->insert(
-//                    [
-//                        'permission_id' => '6',
-//                        'user_id' => $getID + 1
-//                    ]
-//                );
+            $getID=$price = DB::table('users')->max('id');
+           // if(Input::get('phi_ref_number')!=null) {
+          //  User::create($request->all());
+            $pass=Hash::make(Input::get('password'));
+            DB::table('users')->insert(
+                [
+                    'name' => $request['name'],
+                    'email' => $request['email'],
+                    'password' => $pass,
+                    'contact_number' => $request['contact_number'],
+                    'status' => '1',
+                    'confirmed' => '1'
+                ]
+            );
+
+                DB::table('permission_user')->insert(
+                    [
+                        'permission_id' => '1',
+                        'user_id' => $getID + 1
+                    ]
+                );
+//
+                DB::table('permission_user')->insert(
+                    [
+                        'permission_id' => '2',
+                        'user_id' => $getID + 1
+                    ]
+                );
+                DB::table('permission_user')->insert(
+                    [
+                        'permission_id' => '23',
+                        'user_id' => $getID + 1
+                    ]
+                );
+                DB::table('permission_user')->insert(
+                    [
+                        'permission_id' => '6',
+                        'user_id' => $getID + 1
+                    ]
+                );
 //
 //            }
 //

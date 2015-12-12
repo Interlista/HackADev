@@ -218,6 +218,10 @@
                         {!! Form::hidden('confirmed', '1') !!}
                     </div>
 
+                    <div class="col-md-6">
+                        {!! Form::hidden('confirmed', '1') !!}
+                    </div>
+
                     <div class="col-md-offset-8 col-md-2">
                         {!! Form::submit(trans('labels.register_button'), ['class' => 'btn btn-primary']) !!}
                     </div>
