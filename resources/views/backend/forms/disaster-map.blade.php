@@ -107,11 +107,11 @@
     <script>
         var map;
         function initialize() {
-            var myLatlng = new google.maps.LatLng(24.18061975930,79.36565089010);
+            var myLatlng = new google.maps.LatLng(6.5900,81.0300);
             var myOptions = {
-                zoom:7,
+                zoom:12,
                 center: myLatlng,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
+                mapTypeId: google.maps.MapTypeId.TERRAIN
             }
             map = new google.maps.Map(document.getElementById("gmap"), myOptions);
             // marker refers to a global variable
