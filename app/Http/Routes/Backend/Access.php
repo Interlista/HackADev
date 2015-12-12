@@ -54,8 +54,11 @@ $router->group([
 		//Add location details
 		post('insert/location', 'UserController@insertLocation');
 
-		//Add contact details
-		post('insert/contacts', 'UserController@insertContact');
+		//Add contact details for suggetion with 0 value
+		post('suggest/contacts', 'UserController@insertContact');
+
+		//Add contact details directly with 1 value
+		post('insert/contacts', 'UserController@directInsertContacts');
 
 		//Suggest the contact details
 		get('view/suggestedDetails', 'UserController@suggestedContactDetail');

@@ -28,7 +28,7 @@
             </div>
         </div><!-- /.box-header -->
         <div class="box-body">
-            {!! Form::open(['url' => 'admin/access/insert/contacts', 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'post']) !!}
+            {!! Form::open(['url' => 'admin/access/suggest/contacts', 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'post']) !!}
 
                 <div class="form-group">
                     {!! Form::label('','Service Name', ['class' => 'col-sm-2 control-label']) !!}
