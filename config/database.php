@@ -54,10 +54,10 @@ return [
 
 		'mysql' => [
 			'driver'    => 'mysql',
-			'host'      => env('DB_HOST', 'localhost'),
-			'database'  => env('DB_DATABASE', 'dengue'),
-			'username'  => env('DB_USERNAME', 'root'),
-			'password'  => env('DB_PASSWORD', ''),
+			'host'      => env('DB_HOST', 'sql6.freemysqlhosting.net'),
+			'database'  => env('DB_DATABASE', 'sql699454'),
+			'username'  => env('DB_USERNAME', 'sql699454'),
+			'password'  => env('DB_PASSWORD', 'gMvrcaPV1P'),
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

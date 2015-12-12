@@ -4,9 +4,19 @@
 
 @section('page-header')
     <h1>
-        Dengue Infected Areas - Map View
+        Disaster Areas - Map View
         <small>{{ trans('strings.backend.mohoff_title') }}</small>
     </h1>
+
+    <style>
+        #gmap {
+            width: 600px;
+            height: 400px;
+            background-color: #CCC;
+        }
+    </style>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0VNngrDJcJB5fXjoU40-hspXMamVKb8k"></script>
 @endsection
 
 @section('breadcrumbs')
@@ -31,8 +41,59 @@
                 {{--<input id="submit" type="button" value="Geocode">--}}
             {{--</div>--}}
             {{--goole map show location --}}
-            <div id="map">
-                <marker  position="kandy"  ></marker>
+            <div class="row">
+
+                <div  id="gmap" class="col-md-8">
+
+                </div>
+
+                <div id="content_area" class="col-md-4">
+
+                    {!! Form::open(['url' => 'admin/access/insert/location', 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'post']) !!}
+
+                    <div class="form-group">
+                        {!! Form::label('location_name','Location', ['class' => 'col-sm-4 control-label']) !!}
+                    <div class="col-lg-8">
+                        {!! Form::text('location_name', null, ['class' => 'form-control ', 'id' => 'location_name', 'placeholder' => 'Enter the location details here.' ,'required']) !!}
+                    </div>
+                    </div><!--form control-->
+
+                     <div class="form-group">
+                    {!! Form::label('lat_value','Latitude', ['class' => 'col-sm-4 control-label']) !!}
+                    <div class="col-lg-8">
+                        {!! Form::text('lat', null, ['class' => 'form-control', 'id' => 'lat', 'placeholder' => 'Latitude Value','required']) !!}
+                    </div>
+                    </div><!--form control-->
+
+                    <div class="form-group">
+                    {!! Form::label('lang_value','Longitude', ['class' => 'col-sm-4 control-label']) !!}
+                    <div class="col-lg-8">
+                        {!! Form::text('long', null, ['class' => 'form-control', 'id' => 'long', 'placeholder' => 'Longitude Value','required']) !!}
+                    </div>
+                    </div><!--form control-->
+
+                    <div class="form-group">
+                    {!! Form::label('risk_level','Risk', ['class' => 'col-sm-4 control-label']) !!}
+                    <div class="col-lg-8">
+                        <select class="form-control" name="risk_level" id="risk_level" autocomplete="off" required>
+                            <option selected>- Select Risk Level -</option>
+                            <option value="1">High</option>
+                            <option value="2">Medium</option>
+                            <option value="3">Low</option>>
+                        </select>
+                    </div>
+                    </div><!--form control-->
+
+                    <div class="form-group">
+                        {!! Form::submit('Record',['class'=>'btn btn-success col-md-3 col-md-offset-5'])!!}
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
             </div>
 
 
@@ -40,40 +101,44 @@
         </div><!-- /.box-body -->
     </div><!--box box-success-->
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0VNngrDJcJB5fXjoU40-hspXMamVKb8k"></script>
+    {{--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>--}}
+    {{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0VNngrDJcJB5fXjoU40-hspXMamVKb8k"></script>--}}
 
     <script>
-        function initMap() {
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 5,
-                center: {lat: 6.9847222 ,lng: 81.0563889},
+        var map;
+        function initialize() {
+            var myLatlng = new google.maps.LatLng(24.18061975930,79.36565089010);
+            var myOptions = {
+                zoom:7,
+                center: myLatlng,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            map = new google.maps.Map(document.getElementById("gmap"), myOptions);
+            // marker refers to a global variable
+            marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map
             });
 
-            // Define the LatLng coordinates for the polygon's path.
-            var triangleCoords = [
-                {lat: 25.774, lng: -80.190},
-                {lat: 18.466, lng: -66.118},
-                {lat: 32.321, lng: -64.757},
-                {lat: 25.774, lng: -80.190}
-            ];
+            google.maps.event.addListener(map, "click", function(event) {
+                // get lat/lon of click
+                var clickLat = event.latLng.lat();
+                var clickLon = event.latLng.lng();
 
-            // Construct the polygon.
-            var bermudaTriangle = new google.maps.Polygon({
-                paths: triangleCoords,
-                strokeColor: '#FF0000',
-                strokeOpacity: 0.8,
-                strokeWeight: 2,
-                fillColor: '#FF0000',
-                fillOpacity: 0.35
+                // show in input box
+                document.getElementById("lat").value = clickLat.toFixed(4);
+                document.getElementById("long").value = clickLon.toFixed(4);
+
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(clickLat,clickLon),
+                    map: map
+                });
             });
-            bermudaTriangle.setMap(map);
         }
 
+        initialize();
     </script>
-    <script>
-//
-    </script>
+
 
 @endsection
 

@@ -1,8 +1,11 @@
 <?php namespace App\Http\Controllers\Backend\Access\User;
 
 use App\communicable_disease;
+use App\contact_list;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Backend\Access\User\InsertLocation;
 use App\Http\Requests\Backend\Access\User\InsertPhiRequest;
+use App\Http\Requests\Backend\Access\User\InsertContact;
 use App\Repositories\Backend\User\UserContract;
 use App\Repositories\Backend\Role\RoleRepositoryContract;
 use App\Repositories\Frontend\Auth\AuthenticationContract;
@@ -74,12 +77,42 @@ class UserController extends Controller {
 		return view('backend.forms.register_book_entry');
 	}
 
-//	public function PhiView()
-//	{
-//		return view ('backend.forms.phidataList');
-//	}
-	
-    public function phiInsert(InsertPhiRequest $request)
+	public function addmap()
+	{
+		return view('backend.forms.disaster-map');
+	}
+
+	public function suggestedcontact()
+	{
+		$data =contact_list::where('approved', '=', '1')->get();
+		return view('backend.forms.view-suggested-contact',compact('data'));
+	}
+
+	public function usersuggestedcontact()
+	{
+		$data =contact_list::where('approved', '=', '0')->get();
+		return view('backend.forms.check-suggested-contact',compact('data'));
+	}
+
+	public function usersuggestedmap()
+	{
+		return view('backend.forms.check-suggested-map');
+	}
+
+	public function suggestdisaster()
+	{
+		return view('backend.forms.suggest-disaster-map');
+	}
+
+
+	public function suggestcontact()
+	{
+		return view('backend.forms.suggest_contact_entry');
+	}
+
+
+
+	public function phiInsert(InsertPhiRequest $request)
 	{
 		$data = Input::all();
 
@@ -226,15 +259,44 @@ class UserController extends Controller {
 		return Redirect::back()->with('message','Save Successful !');
 	}
 	//MOH Functions
-	public function mohIndex()
-	{
-		$state = DB::table('communicable_diseases')
-			->select('village_name_text')
-			->get();
 
-//		return response()->json($state);
-		return view ('backend.forms.mohIndex')->with('village',$state);
+
+	//method to add location_details
+	public function insertLocation(InsertLocation $request){
+		$data = Input::all();
+
+		$id = DB::table('location_details')->insertGetId(
+			[
+				'location_name'     =>$data['location_name'],
+				'lat'  		        =>$data['lat'],
+				'long'              =>$data['long'],
+				'risk_level'    	=>$data['risk_level'],
+			]);
+
+		return Redirect::back()->with('message','Save Successful !');
 	}
+
+	//method to add contact_details
+	public function insertContact(InsertContact $request){
+		$data = Input::all();
+		$notapproved = 0;
+
+
+
+		$id = DB::table('contact_list')->insertGetId(
+			[
+				'contact_name'     =>$data['contact_name'],
+				'disaster_id'  	   =>$data['disaster_id'],
+				'contact_number'   =>$data['contact_number'],
+				'address'    	=>$data['address'],
+				'other_data' => $data['other_data'],
+				'approved' => $notapproved,
+			]);
+
+		return Redirect::back()->with('message','Save Successful !');
+	}
+
+
 
 	public function mohAnalytics()
 	{

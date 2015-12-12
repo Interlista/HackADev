@@ -2,7 +2,7 @@
 
 @section('page-header')
     <h1>
-        New Disaster Contact Entry
+       Suggest Emergency Contact Details
         <small>{{ trans('strings.backend.phioff_title') }}</small>
     </h1>
 @endsection
@@ -71,16 +71,11 @@
                 </div>
                 </div>
 
-                {{--hidden filed for approved id--}}
-                <div class="col-md-4">
-                {!! Form::hidden('approved', 0) !!}
-                </div>
-
-                <div class="form-group">
+            <div class="form-group">
                         {!! Form::submit('Record',['class'=>'btn btn-success col-md-2 col-md-offset-1'])!!}
-                </div>
+                    </div>
 
-            {!! Form::close() !!}
+                    {!! Form::close() !!}
         </div><!-- /.box-body -->
     </div><!--box box-success-->
 

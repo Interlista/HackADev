@@ -25,19 +25,49 @@ $router->group([
 		//get('PHI/ViewSummary', 'UserController@PhiView');
 		post('PHI/Insert', 'UserController@phiInsert');
 
+
+		//disaster map
+		get('add-map', 'UserController@addmap');
+
+		// view suggested contacts for admin
+		get('search-contact', 'UserController@suggestedcontact');
+
+
+		// view suggested contacts for admin
+		get('user-suggested-contact', 'UserController@usersuggestedcontact');
+
+		// view suggested contacts for admin
+		get('user-suggested-maps', 'UserController@usersuggestedmap');
+
+		// view suggested contacts for admin
+		get('suggest-disaster-area', 'UserController@suggestdisaster');
+
+		// view suggested contacts for admin
+		get('suggest-contact', 'UserController@suggestcontact');
+
+
 		//MOH Root
-		get('mohDashboard','UserController@mohIndex');
-		get('analytics' , 'UserController@mohAnalytics');
-		get('patientDetail','UserController@mohPatientDetailsView');
+		//get('mohDashboard','UserController@mohIndex');
+		//get('analytics' , 'UserController@mohAnalytics');
+		//get('patientDetail','UserController@mohPatientDetailsView');
+
+		//Add location details
+		post('insert/location', 'UserController@insertLocation');
+
+		//Add contact details
+		post('insert/contacts', 'UserController@insertContact');
+
+		//Suggest the contact details
+		get('view/suggestedDetails', 'UserController@suggestedContactDetail');
 
 		//Add Book Entry
 		get('new-contact','UserController@newcontact');
 
 		//common to PHI & MOH
-		get('report','UserController@mohreport')->name('admin.access.users.report');
-		get('report/editData/{id}','UserController@mohreportEditData')->name('admin.access.editdata');
-		post('report/edit','UserController@mohreportEdit');
-		get('report/delete/{id}','UserController@mohreportDelete')->name('admin.access.deletereport');
+		//get('report','UserController@mohreport')->name('admin.access.users.report');
+		//get('report/editData/{id}','UserController@mohreportEditData')->name('admin.access.editdata');
+		//post('report/edit','UserController@mohreportEdit');
+		//get('report/delete/{id}','UserController@mohreportDelete')->name('admin.access.deletereport');
 
 
 		get('chartApi', function(){
