@@ -16,7 +16,7 @@ $router->group([
 		resource('users', 'UserController', ['except' => ['show']]);
 
 		get('data',function(){
-			$job = DB::select("select value from disaster_data ORDER by id DESC limit 1");
+			$job = DB::select("select measurment from disaster_data ORDER by id DESC limit 1");
 
 			return Response::json($job);
 		});
